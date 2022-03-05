@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search_page</title>
+</head>
+
+<body>
+    <form align="center" action="/search/" method="get">
+        姓名:<input id="userName" type="text" name="username" value="请输入用户名" maxlength="6">
+        <script>
+            var uName = document.getElementById('userName');
+            uName.onclick = function() {
+                this.value = "";
+            }
+        </script>
+        <br /> 密码:
+        <input id="pwd" type="password" name="pwd">
+        <p id="viewPwd" class="blue">查看密码</p>
+        <script>
+            var pwd = document.getElementById('pwd');
+            var viewPwd = document.getElementById('viewPwd');
+            var flag = true;
+            viewPwd.onclick = function() {
+                if (flag) {
+                    pwd.type = "text";
+                    flag = false;
+                    this.innerHTML = "隐藏密码";
+                } else {
+                    pwd.type = "password";
+                    flag = true;
+                    this.innerHTML = "查看密码";
+                }
+            }
+        </script>性别:
+        <label for="sex1">男</label><input type="radio" name="sex" value="男" checked="checked" id="sex1">
+        <label for="sex2">女</label><input type="radio" name="sex" value="女" id="sex2"><br /> 籍贯:
+        <select>
+                    <option selected="selected">上海市</option><option>北京市</option><option>天津市</option><option>河北省</option><option>山西省</option><option>内蒙古自治区</option><option>辽宁省</option><option>吉林省</option><option>黑龙江省</option><option>江苏省</option><option>浙江省</option><option>安徽省</option><option>福建省</option><option>江西省</option><option>山东省</option><option>河南省</option><option>湖北省</option><option>湖南省</option><option>广东省</option><option>广西壮族自治区</option><option>海南省</option><option>重庆市</option><option>四川省</option><option>贵州省</option><option>云南省</option><option>西藏自治区</option><option>陕西省</option><option>甘肃省</option><option>青海省</option><option>宁夏回族自治区</option><option>新疆维吾尔自治区</option>
+                </select><br /> 爱好:
+        <label for="hobb1">吃饭</label><input type="checkbox" name="hobby" value="吃饭" checked="checked" id="hobby1">
+        <label for="hobby2">睡觉</label><input type="checkbox" name="hobby" value="睡觉" id="hobby2">
+        <label for="hobby3">玩手机</label><input type="checkbox" name="hobby" value="玩手机" id="hobby3"><br /> 照片:
+        <input type="file"><br /> 自我介绍:
+        <textarea id="txtarea" rows="3" cols="20">请填写自我介绍</textarea>
+        <script>
+            var txtarea = document.getElementById('txtarea');
+            txtarea.onclick = function() {
+                txtarea.innerHTML = "";
+            }
+        </script>
+        <br /> 验证码:
+        <input type="text" name="verfitycode" value="请输入验证码"><input type="button" value="获取验证码"><br />
+        <input type="reset"> &nbsp <input type="submit" value="登录"><br />
+    </form>
+</body>
+
+</html>
